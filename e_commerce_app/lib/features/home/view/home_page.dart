@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/features/home/bloc/home_bloc.dart';
-import 'package:e_commerce_app/features/home/view/home_view.dart';
+import 'package:e_commerce_app/features/home/view/home_body.dart';
 import 'package:e_commerce_app/product/service/product_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

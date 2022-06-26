@@ -1,7 +1,6 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:e_commerce_app/features/auth/login/bloc/login_bloc.dart';
-import 'package:e_commerce_app/product/extensions/show_scaffold_message.dart';
+import 'package:e_commerce_app/core/extensions/show_scaffold_message.dart';
 import 'package:e_commerce_app/product/router/app_router.dart';
 import 'package:e_commerce_app/product/service/auth_service.dart';
 import 'package:e_commerce_app/product/widgets/project_elevated_button.dart';
