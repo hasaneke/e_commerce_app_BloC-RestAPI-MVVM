@@ -24,6 +24,10 @@ class _$AppRouter extends RootStackRouter {
     LoginRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const LoginView());
+    },
+    HomeRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const HomeView());
     }
   };
 
@@ -32,7 +36,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig('/#redirect',
             path: '/', redirectTo: '/splash', fullMatch: true),
         RouteConfig(SplashRoute.name, path: '/splash'),
-        RouteConfig(LoginRoute.name, path: '/login')
+        RouteConfig(LoginRoute.name, path: '/login'),
+        RouteConfig(HomeRoute.name, path: '/home')
       ];
 }
 
@@ -50,4 +55,12 @@ class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute() : super(LoginRoute.name, path: '/login');
 
   static const String name = 'LoginRoute';
+}
+
+/// generated route for
+/// [HomeView]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute() : super(HomeRoute.name, path: '/home');
+
+  static const String name = 'HomeRoute';
 }
