@@ -1,3 +1,5 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:e_commerce_app/product/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -10,14 +12,18 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    // TODO: implement initState
+    Future.delayed(const Duration(seconds: 1), () {
+      AutoRouter.of(context).replace(const LoginRoute());
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('E COMMERCE'),
+    return const Scaffold(
+      body: Center(
+        child: Text('E COMMERCE'),
+      ),
     );
   }
 }

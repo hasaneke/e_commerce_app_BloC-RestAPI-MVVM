@@ -6,25 +6,24 @@ import 'package:flutter/material.dart';
 void main() async {
   ProductInit productInit = ProductInit();
   await productInit.init();
-  final localizationUnit = productInit.localizationInit;
-  final routerUnit = productInit.appRouter;
+
   runApp(EasyLocalization(
-      supportedLocales: localizationUnit.supportedLocales,
-      path: localizationUnit.localizationPath,
-      child: MyApp(
-        appRouter: routerUnit,
-      )));
+      supportedLocales: productInit.localizationInit.supportedLocales,
+      path: productInit.localizationInit.localizationPath,
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({required this.appRouter, Key? key}) : super(key: key);
-  final AppRouter appRouter;
+  MyApp({Key? key}) : super(key: key);
+  final router = AppRouter();
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      routerDelegate: router.delegate(),
+      routeInformationParser: router.defaultRouteParser(),
+      supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
-      routerDelegate: appRouter.delegate(),
-      routeInformationParser: appRouter.defaultRouteParser(),
+      locale: context.locale,
     );
   }
 }
